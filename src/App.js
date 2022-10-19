@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from "./Components/Home/Home";
+import Signup from "./Components/Signup/Signup";
+import Slack from "./Components/Slack/Slack";
+
+import { useState } from "react";
+
+import "./App.css";
+import "./Components/Utilities/Styles/style.css";
+import { useEffect } from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  // Utility
+  const utilities = {
+    changePage: (event, page) => {
+      event.preventDefault();
+      setPage(page);
+    },
+  };
+
+  // Account
+  const [account, setAccount] = useState("");
+
+  // const checkIfAlreadyLoggedIn = () => {
+  //   if (JSON.parse(localStorage.getItem("loggedAccount")).isLogged) {
+  //   }
+  // };
+
+  // Page Rendering
+  const [page, setPage] = useState("home");
+  let renderedPage = null;
+
+  if (page === "home") {
+    renderedPage = (
+      <Home account={account} setAccount={setAccount} utilities={utilities} />
+    );
+  } else if (page === "signup") {
+    renderedPage = <Signup utilities={utilities} />;
+  } else if (page === "slack") {
+    renderedPage = <Slack account={account} />;
+  }
+
+  return <div>{renderedPage}</div>;
 }
 
 export default App;

@@ -1,0 +1,26 @@
+body {
+  background-color: rgb(87, 87, 87);
+}
+
+.card {
+  width: 500px;
+  height: 500px;
+  overflow: auto;
+  border: 1px solid white;
+}
+#list-of-channels li {
+  list-style: none;
+}
+
+#list-of-channels li:hover {
+  cursor: pointer;
+}
+
+#list-of-channels ul {
+  padding-left: 10px;
+  margin-top: 10px;
+}
+
+.selected {
+  border: 1px solid white;
+}
