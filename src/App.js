@@ -34,7 +34,7 @@ function App() {
       <Home account={account} setAccount={setAccount} utilities={utilities} />
     );
   } else if (page === "signup") {
-    renderedPage = <Signup utilities={utilities} />;
+    renderedPage = <Signup account={account} utilities={utilities} />;
   } else if (page === "slack") {
     renderedPage = <Slack account={account} />;
   }

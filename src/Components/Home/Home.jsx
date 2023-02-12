@@ -4,24 +4,27 @@ import Card from "../Utilities/Card/Card";
 
 const Home = (props) => {
   return (
-    <Card>
-      <Signin
-        account={props.account}
-        setAccount={props.setAccount}
-        utilities={props.utilities}
-      />
-      <div>
-        <a
-          href=""
-          onClick={(event) => {
-            props.utilities.changePage(event, "signup");
-          }}
-          type="submit"
-        >
-          signup
-        </a>
+    <div className="sign-form-container">
+      <div className="sign-form">
+        <Signin
+          account={props.account}
+          setAccount={props.setAccount}
+          utilities={props.utilities}
+        />
+        <div id="signup-text-container">
+          <p>Not registered?</p>
+          <a
+            href=""
+            onClick={(event) => {
+              props.utilities.changePage(event, "signup");
+            }}
+            type="submit"
+          >
+            Signup
+          </a>
+        </div>
       </div>
-    </Card>
+    </div>
   );
 };
 

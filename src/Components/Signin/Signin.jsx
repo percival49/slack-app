@@ -49,24 +49,22 @@ const Signin = (props) => {
 
   return (
     <>
-      <div className="form-wrapper">
-        <input
-          ref={username}
-          type="text"
-          placeholder="username"
-          name=""
-          id=""
-        />
-        <input
-          ref={password}
-          type="password"
-          placeholder="password"
-          name=""
-          id=""
-        />
-      </div>
-      <div className="form-wrapper">
-        <button onClick={signinHandler}>signin</button>
+      <input
+        ref={username}
+        type="text"
+        placeholder="username"
+        name=""
+        id="sign-in-username-input"
+      />
+      <input
+        ref={password}
+        type="password"
+        placeholder="password"
+        name=""
+        id="sign-in-password-input"
+      />
+      <div id="sign-in-btn-container">
+        <button onClick={signinHandler}>Sign In</button>
       </div>
     </>
   );

@@ -42,18 +42,21 @@ const Channel = (props) => {
   };
 
   const listChannels = () => {
-    const channelsToShow = channels.map((account) => {
-      return (
-        <ChannelChannel
-          setCurrentMessagesSelected={setCurrentMessagesSelected}
-          utilities={props.utilities}
-          currentChannelSelected={currentChannelSelected}
-          account={account}
-          key={account.name}
-        />
-      );
-    });
-    return channelsToShow;
+    if (channels) {
+      const channelsToShow = channels.map((account) => {
+        return (
+          <ChannelChannel
+            setCurrentMessagesSelected={setCurrentMessagesSelected}
+            utilities={props.utilities}
+            currentChannelSelected={currentChannelSelected}
+            account={account}
+            key={account.name}
+          />
+        );
+      });
+      return channelsToShow;
+    } else {
+    }
   };
 
   const getChannelMessage = () => {};
